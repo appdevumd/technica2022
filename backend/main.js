@@ -16,6 +16,8 @@ async function setData(data) {
   await writeFile(DATA_FILE, JSON.stringify(data));
 }
 
+app.use(express.json());
+
 app.get("/data", async (req, res) => {
   res.send(await getData());
 })
