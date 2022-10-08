@@ -1,3 +1,6 @@
+**NOTE** | This branch is the completed workshop code.
+---|---
+
 # Make a Mobile App with a Backend in React Native and Express
 This repository contains the starter and end result code for App Dev Club's workshop at Technica 2022.
 
