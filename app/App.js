@@ -7,11 +7,22 @@ export default function App() {
   const [newTitle, setNewTitle] = useState("");
 
   const fetchData = async () => {
-    // TODO: Implement GET request
+    const request = await fetch(`http://${BACKEND_IP}:3000/data`)
+    const {text} = await request.json()
+    setTitle(text)
   }
 
   const submitData = async () => {
-    // TODO: Implement POST request
+    await fetch(
+      `http://${BACKEND_IP}:3000/data`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({text: newTitle})
+      }
+    )
   }
 
   return (

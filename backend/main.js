@@ -1,4 +1,4 @@
-import { open, opendir, readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import express from "express";
 import { BACKEND_IP } from './ip.js';
 
@@ -22,7 +22,12 @@ app.get("/data", async (req, res) => {
   res.send(await getData());
 })
 
-// TODO: Implement setting data here.
+app.post("/data", async (req, res) => {
+  await setData({text: req.body.text})
+
+  // How this line could be improved is left as an exercise to the workshopper
+  res.send({success: true});
+})
 
 app.listen(LISTEN_PORT, () => {
   console.log(`API listening at http://${BACKEND_IP}:${LISTEN_PORT}`);
