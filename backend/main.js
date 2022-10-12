@@ -29,6 +29,6 @@ app.post("/data", async (req, res) => {
   res.send({success: true});
 })
 
-app.listen(LISTEN_PORT, () => {
+app.listen(LISTEN_PORT, BACKEND_IP, () => {
   console.log(`API listening at http://${BACKEND_IP}:${LISTEN_PORT}`);
 })
