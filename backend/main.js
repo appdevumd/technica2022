@@ -24,6 +24,6 @@ app.get("/data", async (req, res) => {
 
 // TODO: Implement setting data here.
 
-app.listen(LISTEN_PORT, () => {
+app.listen(LISTEN_PORT, BACKEND_IP, () => {
   console.log(`API listening at http://${BACKEND_IP}:${LISTEN_PORT}`);
 })
